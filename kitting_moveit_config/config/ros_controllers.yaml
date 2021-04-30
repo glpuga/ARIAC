@@ -29,10 +29,49 @@ controller_list:
     default: True
     type: FollowJointTrajectory
     joints:
-      - linear_arm_actuator_joint
-      - shoulder_pan_joint
-      - shoulder_lift_joint
-      - elbow_joint
-      - wrist_1_joint
-      - wrist_2_joint
-      - wrist_3_joint
+    - linear_arm_actuator_joint
+    - shoulder_pan_joint
+    - shoulder_lift_joint
+    - elbow_joint
+    - wrist_1_joint
+    - wrist_2_joint
+    - wrist_3_joint
+    constraints:
+      goal_time: 3
+    stop_trajectory_duration: 3
+    gains:
+      linear_arm_actuator_joint:
+        p: 10000
+        d: 0
+        i: 10
+        i_clamp: 1
+      shoulder_pan_joint:
+        p: 10000
+        d: 0
+        i: 10
+        i_clamp: 1
+      shoulder_lift_joint:
+        p: 10000
+        d: 0
+        i: 10
+        i_clamp: 50
+      elbow_joint:
+        p: 10000
+        d: 0
+        i: 10
+        i_clamp: 25
+      wrist_1_joint:
+        p: 10000
+        d: 0
+        i: 10
+        i_clamp: 1
+      wrist_2_joint:
+        p: 10000
+        d: 0
+        i: 10
+        i_clamp: 1
+      wrist_3_joint:
+        p: 10000
+        d: 0
+        i: 10
+        i_clamp: 1

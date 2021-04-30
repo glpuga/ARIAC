@@ -38,6 +38,40 @@ controller_list:
       - gantry_arm_wrist_1_joint
       - gantry_arm_wrist_2_joint
       - gantry_arm_wrist_3_joint
+    constraints:
+      goal_time: 3
+    stop_trajectory_duration: 3
+    gains:
+      gantry_arm_shoulder_pan_joint:
+        p: 10000
+        d: 0
+        i: 10
+        i_clamp: 1
+      gantry_arm_shoulder_lift_joint:
+        p: 10000
+        d: 0
+        i: 10
+        i_clamp: 50
+      gantry_arm_elbow_joint:
+        p: 10000
+        d: 0
+        i: 10
+        i_clamp: 25
+      gantry_arm_wrist_1_joint:
+        p: 10000
+        d: 0
+        i: 10
+        i_clamp: 1
+      gantry_arm_wrist_2_joint:
+        p: 10000
+        d: 0
+        i: 10
+        i_clamp: 1
+      gantry_arm_wrist_3_joint:
+        p: 10000
+        d: 0
+        i: 10
+        i_clamp: 1
   - name: /ariac/gantry/gantry_controller
     action_ns: follow_joint_trajectory
     default: True
@@ -46,3 +80,25 @@ controller_list:
       - small_long_joint
       - torso_rail_joint
       - torso_base_main_joint
+    constraints:
+      goal_time: 5
+      gantry_arm_elbow_joint:
+        goal: 0.5
+        trajectory: 0.5
+    stop_trajectory_duration: 3
+    gains:
+      small_long_joint:
+        p: 10000
+        d: 0
+        i: 10
+        i_clamp: 1
+      torso_rail_joint:
+        p: 10000
+        d: 0
+        i: 10
+        i_clamp: 1
+      torso_base_main_joint:
+        p: 10000
+        d: 0
+        i: 10
+        i_clamp: 1

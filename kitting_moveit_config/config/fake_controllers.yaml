@@ -9,5 +9,5 @@ controller_list:
       - wrist_2_joint
       - wrist_3_joint
 initial:  # Define initial robot poses.
-  - group: kitting_arm
-    pose: kitting_home
+#  - group: kitting_arm
+#    pose: home
